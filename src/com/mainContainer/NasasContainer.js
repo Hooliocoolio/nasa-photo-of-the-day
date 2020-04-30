@@ -1,43 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import NasasPhoto from '../body/NasasPhoto';
 import axios from 'axios';
 
+const API_KEY = "c4lsvUFmisghG73IVzqvVFocipsn2YTRmUKPoLao";
+const END_POINT = "https://api.nasa.gov/planetary/apod?api_key=";
 
 
+function NasasContainer() {
+  const [astronomy, setAstronomy] = useState({})
 
-class NasasContainer extends React.Component {
-  constructor() {
-    super();
-  
-    this.state = {
-      astronomy: []
-   }
-  
-  }  
-  
-  componentDidMount() {
-    const API_KEY = "c4lsvUFmisghG73IVzqvVFocipsn2YTRmUKPoLao";
-    const END_POINT = "https://api.nasa.gov/planetary/apod?api_key=";
-
-    axios.get(END_POINT + API_KEY)
-      .then(response => {
-        this.setState({
-          astronomy: response.data
+  useEffect(() => {
+    async function fetchData() {
+      axios.get(END_POINT + API_KEY)
+        .then(response => {
+          console.log(response.data)
+          setAstronomy(
+            response.data
+          )
         })
-        console.log(this.state.astronomy)
-      })
-      .catch(error => {
-        console.log(error, 'failed to fetch data')
-      });
-}
-
-  render() {
-
-    return (
-      <NasasPhoto />
-    )
+        .catch(error => {
+          console.log(error, 'failed to fetch data')
+        })
+    }
+    fetchData();
   }
-}
+  , []);
   
+  return(<NasasPhoto data={astronomy} />)
+}
   
   export default NasasContainer;
