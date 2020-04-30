@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
-import CreateBox from '../src/com/createbox/CreateBox';
+import NasasContainer from './com/mainContainer/NasasContainer';
 
 function App() {
-  return <CreateBox />
+  return <NasasContainer />
 }
 
 export default App;
