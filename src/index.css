@@ -11,3 +11,33 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+* {
+  margin: 0px;
+  padding:0px;
+}
+
+.CreateBox {
+  width: 100%;
+  border: 1px solid green;
+  height: 300px;
+}
+
+.header {
+  background-color: navy;
+  color: orange;
+  height: 50px;
+  text-align: center;
+  font-size: 39px;
+  padding:10px;
+}
+
+.body {
+  background-color: beige;
+  color:black;
+}
