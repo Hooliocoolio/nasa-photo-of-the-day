@@ -63,4 +63,15 @@ img {
   color: white;
   height: 50px;
   padding: 20px;
+  margin-bottom: 5px;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+  padding: 5px;
+}
+
+#btn{
+  display: inline-block;
 }
