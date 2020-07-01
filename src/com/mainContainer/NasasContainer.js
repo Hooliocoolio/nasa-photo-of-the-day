@@ -13,7 +13,7 @@ function NasasContainer() {
     async function fetchData() {
       axios.get(END_POINT + API_KEY)
         .then(response => {
-          console.log(response.data)
+          console.log('AXiOS', response.data)
           setAstronomy(
             response.data
           )
