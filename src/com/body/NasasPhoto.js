@@ -7,7 +7,7 @@ import Footer from '../headfoot/Footer';
 const NasasPhoto = (props) => {
 
   const [data] = useState(props)
-  console.log(data);
+  console.log("BODY", data);
   //date, explanation, hdurl, title, url } = props.data;
 
 
